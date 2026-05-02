@@ -1,0 +1,52 @@
+# Private Documentation
+private-project-docs/
+
+# Environment Configuration
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Queue and Processing
+queue/pending/
+queue/processing/
+queue/completed/
+queue/failed/
+
+# Quarantine
+quarantine/
+
+# Temporary Files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Composer Dependencies (if used)
+vendor/
+composer.lock
+
+# System Files
+.directory
+desktop.ini
+
+# Backup Files
+*.bak
+*.backup
+*~
+
+# Testing
+phpunit.xml
+.phpunit.result.cache
