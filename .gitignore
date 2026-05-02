@@ -6,18 +6,6 @@ private-project-docs/
 .env.local
 .env.*.local
 
-# Logs
-logs/
-*.log
-
-# Queue and Processing
-queue/pending/
-queue/processing/
-queue/completed/
-queue/failed/
-
-# Quarantine
-quarantine/
 
 # Temporary Files
 *.tmp
