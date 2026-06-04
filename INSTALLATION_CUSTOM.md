@@ -176,11 +176,13 @@ These variables should be set in the `.env` file:
 
 | Variable | Default | Example | Notes |
 |----------|---------|---------|-------|
-| `AI_PROVIDER` | `openai` | `openai` or `claude_anthropic` | Which AI to use |
+| `AI_PROVIDER` | `openai` | `openai`, `claude_anthropic`, or `ollama-cloud` | Which AI to use |
 | `OPENAI_API_KEY` | (required) | `sk-proj-...` | OpenAI API key |
 | `OPENAI_MODEL` | `gpt-3.5-turbo` | `gpt-4` | OpenAI model |
 | `CLAUDE_API_KEY` | (required) | `sk-ant-...` | Claude API key |
 | `CLAUDE_MODEL` | `claude-3-haiku-20240307` | `claude-3-sonnet-20240229` | Claude model |
+| `OLLAMA_CLOUD_API_KEY` | (required) | `oc_...` | Ollama Cloud API key |
+| `OLLAMA_CLOUD_MODEL` | `glm-5.1` | `glm-5.1` | Ollama Cloud model |
 
 ### Queue Processing
 
@@ -239,6 +241,8 @@ INSTALL_USER=yourusername
 INSTALL_DIR=/home/yourusername/qmail-ai-filter
 AI_PROVIDER=openai
 OPENAI_API_KEY=sk-your-key
+OLLAMA_CLOUD_API_KEY=your-ollama-cloud-key
+OLLAMA_CLOUD_MODEL=glm-5.1
 SPAM_THRESHOLD=0.7
 QMAIL_MAILBOX_ROOT=/home/mail
 QUEUE_DIR=/home/yourusername/qmail-ai-filter/queue

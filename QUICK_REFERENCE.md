@@ -150,6 +150,14 @@ CLAUDE_MODEL=claude-3-haiku-20240307
 SPAM_THRESHOLD=0.7
 ```
 
+### Ollama Cloud (glm-5.1)
+```env
+AI_PROVIDER=ollama-cloud
+OLLAMA_CLOUD_API_KEY=YOUR-OLLAMA-CLOUD-KEY
+OLLAMA_CLOUD_MODEL=glm-5.1
+SPAM_THRESHOLD=0.7
+```
+
 ## Monitoring
 
 ```bash

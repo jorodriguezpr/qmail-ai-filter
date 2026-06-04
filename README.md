@@ -3,14 +3,14 @@
 **An Open Source Project by Jose Rodriguez Arroyo**  
 📧 Email: jrpcone@gmail.com
 
-A sophisticated PHP-based plugin for QMAIL email server that uses Artificial Intelligence to detect and filter spam emails **before they reach your mailbox**. This custom QMAIL AI spam filter integrates with the most popular AI platforms including **OpenAI GPT**, **Google Gemini**, **Claude Anthropic**, and **GitHub Copilot** to provide intelligent spam detection. Detected spam is automatically quarantined or moved to the `.Spam` folder for each user/domain.
+A sophisticated PHP-based plugin for QMAIL email server that uses Artificial Intelligence to detect and filter spam emails **before they reach your mailbox**. This custom QMAIL AI spam filter integrates with the most popular AI platforms including **OpenAI GPT**, **Google Gemini**, **Claude Anthropic**, **GitHub Copilot**, and **Ollama Cloud** to provide intelligent spam detection. Detected spam is automatically quarantined or moved to the `.Spam` folder for each user/domain.
 
 ---
 
 ## Features
 
 ✨ **AI-Powered Spam Detection**
-- Analyzes emails using advanced AI models (GitHub Copilot, OpenAI, Gemini, Claude)
+- Analyzes emails using advanced AI models (GitHub Copilot, OpenAI, Gemini, Claude, Ollama Cloud)
 - Customizable confidence thresholds
 - Detailed spam classification (phishing, scams, malware, marketing, etc.)
 
@@ -37,6 +37,7 @@ A sophisticated PHP-based plugin for QMAIL email server that uses Artificial Int
   - **OpenAI** (GPT-3.5-turbo, GPT-4, GPT-4o)
   - **Google Gemini** (Gemini Pro, Gemini Flash)
   - **Claude Anthropic** (Haiku, Sonnet, Opus)
+   - **Ollama Cloud** (glm-5.1)
 - Configurable spam detection threshold
 - Dry-run mode for testing
 - Detailed logging and statistics
@@ -89,6 +90,7 @@ A sophisticated PHP-based plugin for QMAIL email server that uses Artificial Int
    - **OpenAIProvider**: Uses GPT-3.5-turbo, GPT-4, or GPT-4o
    - **GeminiProvider**: Uses Google Gemini Pro or Flash models
    - **ClaudeProvider**: Uses Claude models from Anthropic (Haiku, Sonnet, Opus)
+   - **OllamaCloudProvider**: Uses Ollama Cloud models (glm-5.1 default)
 
 4. **Queue Manager**
    - Manages email processing queue
@@ -143,7 +145,7 @@ chmod 755 /home/admin/qmail-ai-filter/logs
 
 Create a `.env` file in the project root:
 
-# Choose: 'github_copilot', 'openai', 'gemini', or 'claude_anthropic'
+# Choose: 'github_copilot', 'openai', 'gemini', 'claude_anthropic', or 'ollama-cloud'
 AI_PROVIDER=github_copilot
 
 # GitHub Copilot (RECOMMENDED)
@@ -163,6 +165,11 @@ OPENAI_MODEL=gpt-3.5-turbo
 # OR for Claude:
 # CLAUDE_API_KEY=sk-ant-your-key-here
 # CLAUDE_MODEL=claude-3-haiku-20240307
+
+# OR for Ollama Cloud:
+# AI_PROVIDER=ollama-cloud
+# OLLAMA_CLOUD_API_KEY=your-ollama-cloud-api-key
+# OLLAMA_CLOUD_MODEL=glm-5.1
 
 # Spam Detection
 SPAM_THRESHOLD=0.7  # 70% confidence threshold

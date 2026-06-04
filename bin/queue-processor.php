@@ -8,7 +8,7 @@
  * Usage: php queue-processor.php [--limit 10] [--dry-run]
  * 
  * Recommended cron job:
- * */5 * * * * /usr/bin/php /path/to/queue-processor.php >> /var/log/qmail-ai-filter-queue.log 2>&1
+ * Every 5 minutes: /usr/bin/php /path/to/queue-processor.php >> /var/log/qmail-ai-filter-queue.log 2>&1
  */
 
 // Auto-detect installation directory
@@ -106,6 +106,21 @@ try {
         }
         
         $aiProvider = new \QmailAiFilter\AI\Providers\ClaudeProvider(
+            $apiKey,
+            $model,
+            $logger,
+            $config['spam_detection']['api_timeout'] ?? 30
+        );
+    } elseif ($providerName === 'ollama-cloud') {
+        $apiKey = $config['ai_provider']['ollama-cloud']['api_key'] ?? '';
+        $model = $config['ai_provider']['ollama-cloud']['model'] ?? 'glm-5.1';
+
+        if (empty($apiKey)) {
+            $logger->error("Ollama Cloud API key not configured");
+            exit(1);
+        }
+
+        $aiProvider = new \QmailAiFilter\AI\Providers\OllamaCloudProvider(
             $apiKey,
             $model,
             $logger,

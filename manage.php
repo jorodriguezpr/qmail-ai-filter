@@ -19,6 +19,7 @@ use QmailAiFilter\Email\EmailParser;
 use QmailAiFilter\AI\Providers\GitHubCopilotProvider;
 use QmailAiFilter\AI\Providers\OpenAIProvider;
 use QmailAiFilter\AI\Providers\ClaudeProvider;
+use QmailAiFilter\AI\Providers\OllamaCloudProvider;
 
 // Configuration
 $config = require __DIR__ . '/config/config.php';
@@ -251,6 +252,10 @@ function commandTestAPI(array $config, array $argv): void
             $apiKey = $config['ai_provider']['claude_anthropic']['api_key'] ?? '';
             $model = $config['ai_provider']['claude_anthropic']['model'] ?? 'claude-3-haiku-20240307';
             $aiProvider = new ClaudeProvider($apiKey, $model, $logger);
+        } else if ($provider === 'ollama-cloud') {
+            $apiKey = $config['ai_provider']['ollama-cloud']['api_key'] ?? '';
+            $model = $config['ai_provider']['ollama-cloud']['model'] ?? 'glm-5.1';
+            $aiProvider = new OllamaCloudProvider($apiKey, $model, $logger);
         }
         
         if (!$aiProvider) {
@@ -314,6 +319,10 @@ function commandConfigCheck(array $config): void
         $configured = !empty($config['ai_provider']['claude_anthropic']['api_key']);
         echo sprintf("AI Provider:  %s %s\n", $provider, $configured ? '✓' : '✗');
         echo sprintf("Model:        %s\n", $config['ai_provider']['claude_anthropic']['model'] ?? 'N/A');
+    } else if ($provider === 'ollama-cloud') {
+        $configured = !empty($config['ai_provider']['ollama-cloud']['api_key']);
+        echo sprintf("AI Provider:  %s %s\n", $provider, $configured ? '✓' : '✗');
+        echo sprintf("Model:        %s\n", $config['ai_provider']['ollama-cloud']['model'] ?? 'N/A');
     }
     
     echo "\n";

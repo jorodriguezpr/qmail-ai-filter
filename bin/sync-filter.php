@@ -84,6 +84,16 @@ try {
             $logger,
             $config['spam_detection']['api_timeout'] ?? 30
         );
+    } elseif ($providerName === 'ollama-cloud') {
+        $apiKey = $config['ai_provider']['ollama-cloud']['api_key'] ?? '';
+        $model = $config['ai_provider']['ollama-cloud']['model'] ?? 'glm-5.1';
+
+        $aiProvider = new \QmailAiFilter\AI\Providers\OllamaCloudProvider(
+            $apiKey,
+            $model,
+            $logger,
+            $config['spam_detection']['api_timeout'] ?? 30
+        );
     }
     
     if (!$aiProvider || !$aiProvider->isConfigured()) {

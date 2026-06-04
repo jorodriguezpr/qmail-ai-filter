@@ -65,6 +65,7 @@ php /home/admin/qmail-ai-filter/manage.php test:api
 # Regenerate API key at:
 # - OpenAI: https://platform.openai.com/api-keys
 # - Claude: https://console.anthropic.com/
+# - Ollama Cloud: https://ollama.com/settings/keys
 ```
 
 ---
@@ -132,6 +133,7 @@ echo "CLAUDE_MODEL=claude-3-haiku-20240307" >> /home/admin/qmail-ai-filter/.env
 # Check network connection
 curl -I https://api.openai.com
 curl -I https://api.anthropic.com
+curl -I https://ollama.com
 ```
 
 ---

@@ -38,7 +38,7 @@ return [
     
     // AI Provider Configuration
     'ai_provider' => [
-        // Available: 'github_copilot' (recommended 2026+), 'openai', 'claude_anthropic'
+        // Available: 'github_copilot' (recommended 2026+), 'openai', 'claude_anthropic', 'ollama-cloud'
         'provider' => env('AI_PROVIDER', 'github_copilot'),
         
         // GitHub Copilot (2026+ - RECOMMENDED)
@@ -60,6 +60,13 @@ return [
             'api_url' => 'https://api.anthropic.com/v1/messages',
             'api_key' => env('CLAUDE_API_KEY'),
             'model' => env('CLAUDE_MODEL', 'claude-3-haiku-20240307'),
+        ],
+
+        // Ollama Cloud API
+        'ollama-cloud' => [
+            'api_url' => 'https://ollama.com/api/chat',
+            'api_key' => env('OLLAMA_CLOUD_API_KEY'),
+            'model' => env('OLLAMA_CLOUD_MODEL', 'glm-5.1'),
         ],
     ],
     

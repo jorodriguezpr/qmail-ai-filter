@@ -4,11 +4,22 @@
 
 Complete quick-start guide for deploying QMAIL AI spam filter on any Kloxo NG user account.
 
+06-04-2026 New update
+Now you can use a OLLAMA Cloud models with your API KEY.
+1. Create your account in https://ollama.com/
+2. Setup an API Key (Free models available)
+3. Point your .env settings to Ollama Cloud.
+** .env settings **
+AI_PROVIDER=ollama-cloud
+OLLAMA_CLOUD_API_KEY=your-ollama-cloud-api-key
+OLLAMA_CLOUD_MODEL=glm-5.1
+
+
 ## 📋 Prerequisites
 
 - Kloxo NG server with QMAIL
 - SSH/root access
-- API key from one of: GitHub Copilot, OpenAI, Google Gemini, or Claude Anthropic
+- API key from one of: GitHub Copilot, OpenAI, Google Gemini, Claude Anthropic, or Ollama Cloud
 - Your Linux username (e.g., admin, yourusername, etc.)
 
 ## 🚀 5-Minute Quick Start
@@ -78,6 +89,13 @@ GEMINI_MODEL=gemini-pro
 AI_PROVIDER=claude_anthropic
 CLAUDE_API_KEY=sk-ant-your-key-here
 CLAUDE_MODEL=claude-3-haiku-20240307
+```
+
+**For Ollama Cloud (glm-5.1):**
+```bash
+AI_PROVIDER=ollama-cloud
+OLLAMA_CLOUD_API_KEY=your-ollama-cloud-api-key
+OLLAMA_CLOUD_MODEL=glm-5.1
 ```
 
 Save and exit (Ctrl+O, Enter, Ctrl+X).

@@ -4,7 +4,7 @@
 
 ## Overview
 
-The QMAIL AI Filter now supports **GitHub Copilot** as the primary AI provider for spam detection, making it the recommended choice for 2026 and beyond. This custom QMAIL spam filter supports multiple AI platforms: **GitHub Copilot**, **OpenAI GPT**, **Google Gemini**, and **Claude Anthropic**.
+The QMAIL AI Filter now supports **GitHub Copilot** as the primary AI provider for spam detection, making it the recommended choice for 2026 and beyond. This custom QMAIL spam filter supports multiple AI platforms: **GitHub Copilot**, **OpenAI GPT**, **Google Gemini**, **Claude Anthropic**, and **Ollama Cloud**.
 
 ## What Changed
 
@@ -156,6 +156,7 @@ CLAUDE_API_KEY=sk-ant-...
 | Provider | Cost | Speed | Accuracy | Notes |
 |----------|------|-------|----------|-------|
 | **GitHub Copilot** | $0.10-0.20 | ⚡⚡⚡ | ⭐⭐⭐⭐⭐ | **RECOMMENDED** - Included in subscription |
+| Ollama Cloud (glm-5.1) | Variable | ⚡⚡⚡ | ⭐⭐⭐⭐ | Cloud-hosted Ollama model |
 | Claude Haiku | $0.03 | ⚡⚡ | ⭐⭐⭐ | Cheapest |
 | Claude Sonnet | $0.15 | ⚡⚡⚡ | ⭐⭐⭐⭐ | Balanced |
 | Claude Opus | $0.75 | ⚡⚡ | ⭐⭐⭐⭐⭐ | Most accurate |
