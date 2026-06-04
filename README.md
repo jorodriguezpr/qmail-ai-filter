@@ -451,7 +451,7 @@ For issues, feature requests, or contributions:
 
 ## License
 
-[Specify your license]
+MIT / Open Source
 
 ## Changelog
 
@@ -460,3 +460,5 @@ For issues, feature requests, or contributions:
 - Asynchronous queue processing
 - QMAIL/Kloxo NG integration
 - Configurable thresholds and behavior
+
+### 06-04-2026 Add Support to Ollama cloud models
